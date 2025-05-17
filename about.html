@@ -7,6 +7,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
+    <link rel="icon" type="image/png" href="./img/Screenshot_2025-05-15_223705-removebg-preview.png" />
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -152,6 +153,32 @@
         </div>
     </div>
     <!-- About End -->
+    
+    <!-- Mission and Vision Start -->
+    <div class="container-fluid py-5 mb-5">
+        <div class="container">
+            <h6 class="text-secondary font-weight-semi-bold text-uppercase mb-3">Our Mission & Vision</h6>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1 class="mb-4 section-title">Our Mission</h1>
+                    <ul class="pl-3">
+                        <li>To provide top-quality, reliable, and eco-friendly facility management services.</li>
+                        <li>To ensure customer satisfaction through tailored and efficient solutions.</li>
+                        <li>To maintain a safe and clean environment for all clients and their stakeholders.</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="mb-4 section-title">Our Vision</h1>
+                    <ul class="pl-3">
+                        <li>To be the leading facility management company recognized for excellence and innovation.</li>
+                        <li>To continuously improve and adopt sustainable practices in all our operations.</li>
+                        <li>To build long-term partnerships based on trust, integrity, and performance.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Mission and Vision End -->
 
 
     <!-- Video Modal Start -->
@@ -394,6 +421,18 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+        // JavaScript to make nav links active on click
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    navLinks.forEach(lnk => lnk.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

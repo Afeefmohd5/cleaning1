@@ -140,3 +140,45 @@
     
 })(jQuery);
 
+// Appointment modal and WhatsApp integration
+$(document).ready(function() {
+    // When a book appointment button is clicked
+    $('.book-appointment-btn').on('click', function() {
+        var service = $(this).data('service');
+        $('#serviceSelect').val(service);
+        $('#appointmentModal').modal('show');
+    });
+
+    // Handle form submission
+    $('#appointmentForm').on('submit', function(e) {
+        e.preventDefault();
+        var name = $('#clientName').val().trim();
+        var phone = $('#clientPhone').val().trim();
+        var service = $('#serviceSelect').val();
+
+        if (!name || !phone || !service) {
+            alert('Please fill all the fields.');
+            return;
+        }
+
+        // Construct WhatsApp message
+        var message = 'Appointment Request:%0A' +
+                      'Name: ' + encodeURIComponent(name) + '%0A' +
+                      'Phone: ' + encodeURIComponent(phone) + '%0A' +
+                      'Service: ' + encodeURIComponent(service);
+
+        // WhatsApp number (replace with your number including country code, no + or spaces)
+        var whatsappNumber = '9106878410';
+
+        // Open WhatsApp chat with pre-filled message
+        var whatsappUrl = 'https://wa.me/' + whatsappNumber + '?text=' + message;
+        window.open(whatsappUrl, '_blank');
+
+        // Close modal
+        $('#appointmentModal').modal('hide');
+
+        // Optionally reset form
+        $('#appointmentForm')[0].reset();
+    });
+});
+
