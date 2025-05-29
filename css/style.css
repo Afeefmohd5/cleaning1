@@ -9885,6 +9885,16 @@ h6,
     font-weight: 400;
     padding: 5px 12px !important;
   }
+
+  #header-carousel,
+  #header-carousel .carousel-item {
+    height: 80vh;
+  }
+
+  #header-carousel .carousel-item img {
+    height: 80vh;
+    object-fit: cover;
+  }
 }
 
 @media (min-width: 992px) {
